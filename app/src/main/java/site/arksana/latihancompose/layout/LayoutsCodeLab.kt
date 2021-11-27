@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
 import site.arksana.latihancompose.ui.theme.LatihanComposeTheme
 
 @Composable
-fun LayoutsCodelab() {
+fun LayoutsCodelabWithHeader(content: @Composable (modifier: Modifier) -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
@@ -35,7 +35,7 @@ fun LayoutsCodelab() {
             )
         }
     ) { innerPadding ->
-        BodyContent(Modifier.padding(innerPadding))
+        content(Modifier.padding(innerPadding))
     }
 }
 
@@ -50,7 +50,9 @@ fun BodyContent(modifier: Modifier = Modifier) {
 @Composable
 fun LayoutsCodelabPreview() {
     LatihanComposeTheme {
-        LayoutsCodelab()
+        LayoutsCodelabWithHeader {
+            BodyContent(it)
+        }
     }
 }
 
@@ -130,3 +132,5 @@ fun ImageListItem(index: Int) {
         Text("Item #$index", style = MaterialTheme.typography.subtitle1)
     }
 }
+
+

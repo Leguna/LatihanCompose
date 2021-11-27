@@ -10,7 +10,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.tooling.preview.Preview
 import site.arksana.latihancompose.layout.Greetings
-import site.arksana.latihancompose.layout.LayoutsCodelab
 import site.arksana.latihancompose.layout.OnBoardingScreen
 import site.arksana.latihancompose.ui.theme.LatihanComposeTheme
 
@@ -20,8 +19,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             LatihanComposeTheme {
                 // Conversation(SampleData.conversationSample)
-                // MyApp()
-                LayoutsCodelab()
+                MyApp()
             }
         }
 
